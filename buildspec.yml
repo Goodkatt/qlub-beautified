@@ -31,12 +31,17 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      #- docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
       - cd /home
       - mkdir qlub-helm
       - cd qlub-helm
-      - git clone https://github.com/Goodkatt/qlub-beautified-helm.git
+      - git clone https://github.com/Goodkatt/helm.git
       - ls
+      - cd qlub-helm
+      - yq eval '.image.repository = strenv(IMAGE_REPO_NAME) | .image.tag = strenv(IMAGE_TAG)' -i values.yaml
+      - git add .
+      - git commit -m "Update image repository and tag"
+      - git push origin main
       #- cd ../HelmChart
       #- yq e ".version = \"$GIT_SHORT\"" -i Chart.yaml
       #- cat Chart.yaml
