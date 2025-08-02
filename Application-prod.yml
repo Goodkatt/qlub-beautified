@@ -5,12 +5,14 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  sources:
+  source:
     repoURL: https://github.com/Goodkatt/qlub-beautified.git
     targetRevision: 3d2da9a
     path: HelmChart
+    helm: 
+      valueFiles:
+        - values-prod.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: default
-  valueFiles:
-      - values-prod.yaml
+  
