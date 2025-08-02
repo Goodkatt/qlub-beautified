@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp
+spec:
+  destination:
+    name: ''
+    namespace: default"
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: HelmChart
+    repoURL: 'https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/devops.repo'
+    targetRevision: master
+    helm:
+      valueFiles:
+        - values.yaml
+  sources: []
+  project: dev-projects
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
