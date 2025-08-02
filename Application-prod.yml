@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Goodkatt/qlub-beautified.git
-    targetRevision: 3d2da9a
+    targetRevision: da3b80d
     path: HelmChart
     helm: 
       valueFiles:
