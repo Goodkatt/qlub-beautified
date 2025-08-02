@@ -31,22 +31,25 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
-      - cd ../HelmChart
-      - yq e ".version = \"$GIT_SHORT\"" -i Chart.yaml
-      - cat Chart.yaml
+      #- docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
+      - cd
       - pwd
-      - cd ../
-      - yq e ".spec.source.targetRevision = \"$GIT_SHORT\"" -i Application.yml
-      - yq e ".spec.source.targetRevision = \"$GIT_SHORT\"" -i Application-prod.yml
-      - cat Application.yml
-      - cat Application-prod.yml
-      - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-      - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
-      - aws configure set default.region $AWS_DEFAULT_REGION
-      - aws eks update-kubeconfig --name $CLUSTER_NAME --region $AWS_DEFAULT_REGION
-      - kubectl apply -f Application.yml
-      - kubectl apply -f Application-prod.yml
+      - ls
+      #- cd ../HelmChart
+      #- yq e ".version = \"$GIT_SHORT\"" -i Chart.yaml
+      #- cat Chart.yaml
+      #- pwd
+      #- cd ../
+      #- yq e ".spec.source.targetRevision = \"$GIT_SHORT\"" -i Application.yml
+      #- yq e ".spec.source.targetRevision = \"$GIT_SHORT\"" -i Application-prod.yml
+      #- cat Application.yml
+      #- cat Application-prod.yml
+      #- aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+      #- aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+      #- aws configure set default.region $AWS_DEFAULT_REGION
+      #- aws eks update-kubeconfig --name $CLUSTER_NAME --region $AWS_DEFAULT_REGION
+      #- kubectl apply -f Application.yml
+      #- kubectl apply -f Application-prod.yml
       #- yq e -i ".version = \"$CHART_VERSION\"" qlub-helm-chart/Chart.yaml
       #- yq e -i ".appVersion = \"$CHART_VERSION\"" qlub-helm-chart/Chart.yaml
       #- cat qlub-helm-chart/Chart.yaml
