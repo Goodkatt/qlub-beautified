@@ -37,7 +37,8 @@ phases:
       - cd qlub-helm
       - git clone https://github.com/Goodkatt/helm.git
       - ls
-      - cd qlub-helm
+      - cd helm
+      - ls
       - yq eval '.image.repository = strenv(IMAGE_REPO_NAME) | .image.tag = strenv(IMAGE_TAG)' -i values.yaml
       - git add .
       - git commit -m "Update image repository and tag"
