@@ -39,6 +39,7 @@ phases:
       - cd ../
       - yq e ".spec.source.targetRevision = \"$GIT_SHORT\"" -i Application.yml
       - cat Application.yml
+      - aws eks update-kubeconfig --name $CLUSTER_NAME --region $AWS_DEFAULT_REGION
       - kubectl apply -f Application.yml --validate=false
       - kubectl apply -f Application-prod.yml --validate=false
       #- yq e -i ".version = \"$CHART_VERSION\"" qlub-helm-chart/Chart.yaml
