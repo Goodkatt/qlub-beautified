@@ -38,6 +38,7 @@ phases:
       - git clone https://github.com/Goodkatt/helm.git
       - ls
       - cd helm
+      - cd qlub-helm
       - ls
       - yq eval '.image.repository = strenv(IMAGE_REPO_NAME) | .image.tag = strenv(IMAGE_TAG)' -i values.yaml
       - git add .
