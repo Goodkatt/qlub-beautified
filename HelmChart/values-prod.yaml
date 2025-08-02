@@ -1,0 +1,38 @@
+replicaCount: 3
+image:
+  repository: 023703779142.dkr.ecr.eu-west-1.amazonaws.com/qlub-image-repo
+  tag: 2025.08.02.131151
+  pullPolicy: IfNotPresent
+serviceAccount:
+  name: eks-secrets-sa
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+ingress:
+  enabled: true
+  className: alb
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/rewrite-target: /
+  paths:
+    - path: /admin
+      pathType: Prefix
+    - path: /
+      pathType: Prefix
+
+hpa:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 15
+resources:
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+  requests:
+    cpu: "250m"
+    memory: "256Mi"
