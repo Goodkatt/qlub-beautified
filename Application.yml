@@ -7,10 +7,10 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Goodkatt/qlub-beautified.git
-    targetRevision: 3d2da9a
+    targetRevision: asd
     path: HelmChart
   destination:
     server: https://kubernetes.default.svc
     namespace: default
   valueFiles:
-      - values.yaml
+    - values.yaml
