@@ -32,8 +32,10 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
       #- docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
-      - cd
-      - pwd
+      - cd /home
+      - mkdir qlub-helm
+      - cd qlub-helm
+      - git clone https://github.com/Goodkatt/qlub-beautified-helm.git
       - ls
       #- cd ../HelmChart
       #- yq e ".version = \"$GIT_SHORT\"" -i Chart.yaml
