@@ -39,8 +39,8 @@ phases:
       - cd ../
       - yq e ".spec.source.targetRevision = \"$GIT_SHORT\"" -i Application.yml
       - cat Application.yml
-      - kubectl apply -f Application.yml
-      - kubectl apply -f Application-prod.yml
+      - kubectl apply -f Application.yml --validate=false
+      - kubectl apply -f Application-prod.yml --validate=false
       #- yq e -i ".version = \"$CHART_VERSION\"" qlub-helm-chart/Chart.yaml
       #- yq e -i ".appVersion = \"$CHART_VERSION\"" qlub-helm-chart/Chart.yaml
       #- cat qlub-helm-chart/Chart.yaml
