@@ -81,7 +81,7 @@ Oms3oGsomH
 
 
 eksctl create iamserviceaccount \
-                --region=eu-west-1 --namespace default --name eks-secrets-sa \
+                --region=eu-west-1 --namespace prod --name eks-secrets-sa \
                 --cluster "my-cluster" \
                 --attach-policy-arn  "arn:aws:iam::023703779142:policy/grkm" --approve \
                 --override-existing-serviceaccounts

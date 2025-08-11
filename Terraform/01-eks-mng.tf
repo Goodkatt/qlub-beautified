@@ -36,14 +36,25 @@ module "eks" {
 
   # EKS Managed Node Group(s)
   eks_managed_node_groups = {
-    example = {
+
+    example_two = {
       # Starting on 1.30, AL2023 is the default AMI type for EKS managed node groups
       ami_type       = "AL2023_x86_64_STANDARD"
       instance_types = ["t3.small"]
 
-      min_size     = 3
+      min_size     = 2
+      max_size     = 9
+      desired_size = 2
+      iam_role_name = aws_iam_role.eks_worker_role.name
+    }
+    example_three = {
+      # Starting on 1.30, AL2023 is the default AMI type for EKS managed node groups
+      ami_type       = "AL2023_x86_64_STANDARD"
+      instance_types = ["t3.small"]
+
+      min_size     = 2
       max_size     = 8
-      desired_size = 3
+      desired_size = 2
       iam_role_name = aws_iam_role.eks_worker_role.name
     }
   }
