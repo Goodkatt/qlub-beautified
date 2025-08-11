@@ -96,9 +96,9 @@ def get_secret_json_value(file_path, key, default=None):
 
 BASE_SECRET_PATH = "/mnt/secrets"
 
-SECRET_KEY = get_secret_json_value(f"{BASE_SECRET_PATH}/SECRET_KEYY_one", "SECRET_KEY")
+SECRET_KEY = get_secret_json_value(f"{BASE_SECRET_PATH}/SECRET_KEYY_onee", "SECRET_KEY")
 
-DEBUG_str = get_secret_json_value(f"{BASE_SECRET_PATH}/is_debug_one", "DEBUG", default="false")
+DEBUG_str = get_secret_json_value(f"{BASE_SECRET_PATH}/is_debug_onee", "DEBUG", default="false")
 DEBUG = DEBUG_str.lower() == "true"
 
 ALLOWED_HOSTS = ["*"]
@@ -146,11 +146,11 @@ WSGI_APPLICATION = "app.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": get_secret_json_value(f"{BASE_SECRET_PATH}/is_database_name_one", "DATABASE_NAME"),
-        "USER": get_secret_json_value(f"{BASE_SECRET_PATH}/is_database_user_one", "DATABASE_USER"),
-        "PASSWORD": get_secret_json_value(f"{BASE_SECRET_PATH}/is_database_password_one", "DATABASE_PASSWORD"),
-        "HOST": get_secret_json_value(f"{BASE_SECRET_PATH}/is_database_host_one", "DATABASE_HOST", default="localhost"),
-        "PORT": get_secret_json_value(f"{BASE_SECRET_PATH}/is_database_port_one", "DATABASE_PORT", default="5432"),
+        "NAME": get_secret_json_value(f"{BASE_SECRET_PATH}/is_database_name_onee", "DATABASE_NAME"),
+        "USER": get_secret_json_value(f"{BASE_SECRET_PATH}/is_database_user_onee", "DATABASE_USER"),
+        "PASSWORD": get_secret_json_value(f"{BASE_SECRET_PATH}/is_database_password_onee", "DATABASE_PASSWORD"),
+        "HOST": get_secret_json_value(f"{BASE_SECRET_PATH}/is_database_host_onee", "DATABASE_HOST", default="localhost"),
+        "PORT": get_secret_json_value(f"{BASE_SECRET_PATH}/is_database_port_onee", "DATABASE_PORT", default="5432"),
     }
 }
 

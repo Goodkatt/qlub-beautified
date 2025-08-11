@@ -2,7 +2,7 @@ module "secret_key" {
   source = "terraform-aws-modules/secrets-manager/aws"
 
   # Secret
-  name                    = "SECRET_KEYY_one"
+  name                    = "SECRET_KEYY_onee"
   description             = "Django secret key"
   recovery_window_in_days = 7
 
@@ -21,7 +21,7 @@ module "debug" {
   source = "terraform-aws-modules/secrets-manager/aws"
 
   # Secret
-  name                    = "is_debug_one"
+  name                    = "is_debug_onee"
   description             = "debugging"
   recovery_window_in_days = 7
 
@@ -40,7 +40,7 @@ module "databasename" {
   source = "terraform-aws-modules/secrets-manager/aws"
 
   # Secret
-  name                    = "is_database_name_one"
+  name                    = "is_database_name_onee"
   description             = "DB NAME"
   recovery_window_in_days = 7
 
@@ -58,7 +58,7 @@ module "databaseuser" {
   source = "terraform-aws-modules/secrets-manager/aws"
 
   # Secret
-  name                    = "is_database_user_one"
+  name                    = "is_database_user_onee"
   description             = "DB USER"
   recovery_window_in_days = 7
 
@@ -76,7 +76,7 @@ module "databaspassword" {
   source = "terraform-aws-modules/secrets-manager/aws"
 
   # Secret
-  name                    = "is_database_password_one"
+  name                    = "is_database_password_onee"
   description             = "DB PASSWORD"
   recovery_window_in_days = 7
 
@@ -94,7 +94,7 @@ module "databashost" {
   source = "terraform-aws-modules/secrets-manager/aws"
 
   # Secret
-  name                    = "is_database_host_one"
+  name                    = "is_database_host_onee"
   description             = "DB HOST"
   recovery_window_in_days = 7
 
@@ -112,7 +112,7 @@ module "databasport" {
   source = "terraform-aws-modules/secrets-manager/aws"
 
   # Secret
-  name                    = "is_database_port_one"
+  name                    = "is_database_port_onee"
   description             = "DB PORT"
   recovery_window_in_days = 7
 

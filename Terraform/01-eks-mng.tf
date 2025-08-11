@@ -12,7 +12,7 @@ module "eks" {
     }
     aws-ebs-csi-driver = { 
         most_recent = true 
-        service_account_role_arn = "arn:aws:iam::023703779142:role/AmazonEKS_EBS_CSI_DriverRole"
+        service_account_role_arn = "arn:aws:iam::023703779142:role/AmazonEKS_EBS_CSI_DriverRolee"
     }
 
 
@@ -41,9 +41,9 @@ module "eks" {
       ami_type       = "AL2023_x86_64_STANDARD"
       instance_types = ["t3.small"]
 
-      min_size     = 2
+      min_size     = 3
       max_size     = 8
-      desired_size = 2
+      desired_size = 3
       iam_role_name = aws_iam_role.eks_worker_role.name
     }
   }

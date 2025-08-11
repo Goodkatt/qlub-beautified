@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cmsweb-envsettings
+data:
+  envsettings.Prod.json: |
+      "VITE_BASE_CMS_URL": "https://gatewaycmsint.cloud.ajet.com",
+      "VITE_AVAILABILITY_CURRENCY_EXCHANGE_ACTIVE": "AVAILABILITY_CURRENCY_EXCHANGE_ACTIVE_WEB_PROD"

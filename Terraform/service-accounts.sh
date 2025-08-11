@@ -71,3 +71,17 @@ fi
 #kubectl port-forward svc/argocd-server -n argocd 8080:443
 #kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath={.data.password} | base64 -d
 BprUGnh3izCQI4a3
+
+argocd
+tCPB9mjS8yi2bEXB
+
+postgres
+Oms3oGsomH
+
+
+
+eksctl create iamserviceaccount \
+                --region=eu-west-1 --namespace default --name eks-secrets-sa \
+                --cluster "my-cluster" \
+                --attach-policy-arn  "arn:aws:iam::023703779142:policy/grkm" --approve \
+                --override-existing-serviceaccounts
