@@ -4,4 +4,4 @@ from rest_framework.response import Response
 
 @api_view(["GET"])
 def qlub(request):
-    return Response({"message": "Qlub!!!!!!!!!"})
+    return Response({"message": "Qlub!!!!!!!!!!"})
