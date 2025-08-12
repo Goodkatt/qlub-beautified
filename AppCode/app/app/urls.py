@@ -6,3 +6,7 @@ urlpatterns = [
     path("", views.qlub, name="qlub"),
     path("admin/", admin.site.urls),
 ]
+
+
+
+
